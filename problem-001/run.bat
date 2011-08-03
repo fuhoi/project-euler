@@ -6,5 +6,6 @@ echo Python Runner
 echo ===
 echo Runs solution.py
 echo ---
-python solution.py
+REM python solution.py
+python -O solution.py
 pause

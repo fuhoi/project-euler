@@ -1,31 +1,36 @@
-import sys
+"""Project Euler problem 1 solution"""
 
-def printArgs():
-	print sys.argv
-	
-def mod(numerator, denominator):
-	return numerator % denominator
+__author__ = "Adam Lincoln (adam.k.lincoln@gmail.com)"
+__version__ = "$Revision: 1.0 $"
+__date__ = "$Date: 2011/08/03 $"
 
-def add(x, y):
-	return x + y
-	
-def f(numerators, denominators):
-	return [numerator for numerator in numerators for denominator in denominators if mod(numerator, denominator) == 0]
-	
-def fx(nums):
-	total = 0
-	for num in nums:
-		total += num
-	return total
-	
+def __remainder(numerator, denominator):
+    """Returns the remainder of the numerator divided by the denominator"""
+    return numerator % denominator
+
+def __divisors(numerators, denominators):
+    """Returns a list of numerators that are divisible by a list of denominators"""
+    return [n for n in numerators for m in denominators if __remainder(n, m) == 0]
+
 if __name__ == "__main__":
-	m = 10
-	n = 1
-	numerators = range(n, m+1)
-	denominators = [3, 5]
-	nums = f(numerators, denominators)
-	print "nums = " + str(nums)
-	nums = f(range(1,11), [3,5])
-	print "nums = " + str(nums)
-	sum = fx(nums)
-	print "sum = %s" % sum
+    # print file information
+    print "%s\n---" %__doc__
+    
+    # min and max variables
+    min = 1
+    max = 10 # max is less than condition
+    
+    # create numerators, denominators, divisors and total
+    numerators = range(min, max)
+    denominators = [3, 5]
+    divisors = __divisors(numerators, denominators)
+    total = sum(divisors)
+    
+    # print out debug info
+    if __debug__:
+        print "The numerators used are %s" % numerators
+        print "The denominators used are %s" % denominators
+        print "The divisors used are %s" % divisors
+    
+    # print out final result
+    print "The sum of numbers between %s and %s that is divisible by %s is %s" % (min, max, "%s and %s" % (", ".join(str(d) for d in denominators[:-1]), denominators[-1]), total)
