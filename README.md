@@ -7,4 +7,4 @@ This repo contains my Project Euler solutions
 
 Structure
 -
-Each solution is contained within its own folder labelled with problem-<problem id>
+Each solution is contained within its own folder labelled with the problem id
