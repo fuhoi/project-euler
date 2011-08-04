@@ -17,3 +17,10 @@ This folder contains the following files:
 * `run-tests.bat` - run unit tests
 * `solution.py` - solution to problem
 * `tests.py` - unit tests
+
+References
+-
+* [Project Euler](http://projecteuler.net/)
+* [Dive Into Python](http://diveintopython.org/)
+* [Think Python - How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
+* [Python Documentation](http://www.python.org/doc/)
