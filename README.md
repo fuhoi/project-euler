@@ -24,3 +24,4 @@ References
 * [Dive Into Python](http://diveintopython.org/)
 * [Think Python - How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 * [Python Documentation](http://www.python.org/doc/)
+* [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
