@@ -4,7 +4,6 @@
 Summary
 -
 This repo contains my [Project Euler] [1] solutions
-
     [1]: http://projecteuler.net/ "Project Euler"
 
 Structure
