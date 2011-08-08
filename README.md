@@ -27,3 +27,8 @@ References
 * [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
 
 * [euler]: http://projecteuler.net/ "Project Euler"
+
+Visit [Daring Fireball][] for more information.
+And then define the link:
+
+[Daring Fireball]: http://daringfireball.net/
