@@ -3,7 +3,8 @@
 
 Summary
 -
-This repo contains my [Project Euler][euler] solutions
+This repo contains my [Project Euler] [1] solutions
+  [1]: http://projecteuler.net/        "Project Euler"
 
 Structure
 -
@@ -25,17 +26,3 @@ References
 * [Think Python - How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 * [Python Documentation](http://www.python.org/doc/)
 * [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
-
-* [euler]: http://projecteuler.net/ "Project Euler"
-
-Visit [Daring Fireball][] for more information.
-And then define the link:
-
-[Daring Fireball]: http://daringfireball.net/
-
-I get 10 times more traffic from [Google] [1] than from
-[Yahoo] [2] or [MSN] [3].
-
-  [1]: http://google.com/        "Google"
-  [2]: http://search.yahoo.com/  "Yahoo Search"
-  [3]: http://search.msn.com/    "MSN Search"
