@@ -13,3 +13,7 @@ remainder(numerator, denominator) - returns the remainder of the numerator divid
 isDivisor(numerator, denominator) - returns true if remainder(numerator, denominator) is zero
 
 multiples(numerators, denominators) - returns a list of numerators where isDivisor is true
+
+Solution
+-
+The answer to this problem is 233168
