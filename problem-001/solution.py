@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # print file information
     print "%s\n---" %__doc__
     # parse parameters
-    opts, extraparams = getopt.getopt(sys.argv[1:], "hDn:d:", ["help", "debug", "limit=", "denominators="])
+    opts, extraparams = getopt.getopt(sys.argv[1:], "hDn:d:", ["help", "debug", "limit=", "limit:", "denominators=", "denominators:"])
     # default min and max variables
     min = 1
     max = 10 # max is less than condition
@@ -38,16 +38,19 @@ if __name__ == "__main__":
     for o,p in opts:
         if o in ["-h", "--help"]:
             pass # usage()
-        if o in ["-d", "--debug"]:
+        if o in ["-D", "--debug"]:
             pass # setDebug()
-        if o in ["-l", "--limit"]:
-            max = int(p)
+        if o in ["-n", "--limit"]:
+            max = int(p.strip("=:"))
         if o in ["-d", "--denominators"]:
-            d = [int(i) for i in p.split(",")]
+            d = [int(i.strip("=:")) for i in p.split(",")]
     # create numerators, multiples and total
     n = range(min, max)
     m = multiples(n, d)
     t = sum(m)
+    # sort for display
+    n.sort()
+    m.sort()
     # print out debug info
     if __debug__:
         print "The numerators used are %s" % n
