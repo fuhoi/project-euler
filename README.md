@@ -3,7 +3,7 @@
 
 Summary
 -
-This repo contains my Project Euler solutions
+This repo contains my [Project Euler][euler] solutions
 
 Structure
 -
@@ -25,3 +25,5 @@ References
 * [Think Python - How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 * [Python Documentation](http://www.python.org/doc/)
 * [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+
+* [euler]: http://projecteuler.net/ "Project Euler"
