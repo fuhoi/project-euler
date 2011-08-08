@@ -12,6 +12,18 @@ Design
 * `isDivisor(numerator, denominator)` - returns true if remainder(numerator, denominator) is zero
 * `multiples(numerators, denominators)` - returns a list of numerators where isDivisor is true
 
+Getting Started
+-
+To run:
+"python solution.py -n=1000 -d=3,5"
+Or:
+"python solution.py --limit=1000 --denominators=3,5"
+
+This solution supports the following flags:
+* `-D, --debug` - verbose output
+* `-n, --limit` - upper limit
+* `-d, --denominators` - denominators
+
 Solution
 -
 The answer to this problem is 233168
