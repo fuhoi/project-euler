@@ -6,6 +6,5 @@ echo Python Runner
 echo ===
 echo Runs solution.py
 echo ---
-REM python solution.py
-python -O solution.py
+python -O solution.py --limit=1000 --denominators=3,5
 pause

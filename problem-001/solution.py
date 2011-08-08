@@ -1,36 +1,57 @@
 """Project Euler problem 1 solution"""
 
+import sys
+import getopt
+
 __author__ = "Adam Lincoln (adam.k.lincoln@gmail.com)"
 __version__ = "$Revision: 1.0 $"
 __date__ = "$Date: 2011/08/03 $"
 
-def __remainder(numerator, denominator):
+def remainder(numerator, denominator):
     """Returns the remainder of the numerator divided by the denominator"""
     return numerator % denominator
 
-def __divisors(numerators, denominators):
+def isDivisor(numerator, denominator):
+    """Returns true if the remainder of the division is zero"""
+    return remainder(numerator, denominator) == 0
+    
+def multiples(numerators, denominators):
     """Returns a list of numerators that are divisible by a list of denominators"""
-    return [n for n in numerators for m in denominators if __remainder(n, m) == 0]
+    m = []
+    for n in numerators:
+        for d in denominators:
+            if isDivisor(n, d):
+                m.append(n)
+    m = list(set(m)) # remove duplicates
+    return m
 
 if __name__ == "__main__":
     # print file information
     print "%s\n---" %__doc__
-    
-    # min and max variables
+    # parse parameters
+    opts, extraparams = getopt.getopt(sys.argv[1:], "hDn:d:", ["help", "debug", "limit=", "denominators="])
+    # default min and max variables
     min = 1
     max = 10 # max is less than condition
-    
-    # create numerators, denominators, divisors and total
-    numerators = range(min, max)
-    denominators = [3, 5]
-    divisors = __divisors(numerators, denominators)
-    total = sum(divisors)
-    
+    d = [3, 5]
+    # process parameters
+    for o,p in opts:
+        if o in ["-h", "--help"]:
+            pass # usage()
+        if o in ["-d", "--debug"]:
+            pass # setDebug()
+        if o in ["-l", "--limit"]:
+            max = int(p)
+        if o in ["-d", "--denominators"]:
+            d = [int(i) for i in p.split(",")]
+    # create numerators, multiples and total
+    n = range(min, max)
+    m = multiples(n, d)
+    t = sum(m)
     # print out debug info
     if __debug__:
-        print "The numerators used are %s" % numerators
-        print "The denominators used are %s" % denominators
-        print "The divisors used are %s" % divisors
-    
+        print "The numerators used are %s" % n
+        print "The denominators used are %s" % d
+        print "The multiples used are %s" % m
     # print out final result
-    print "The sum of numbers between %s and %s that is divisible by %s is %s" % (min, max, "%s and %s" % (", ".join(str(d) for d in denominators[:-1]), denominators[-1]), total)
+    print "The sum of numbers between %s and %s that is divisible by %s is %s" % (min, max, "%s and %s" % (", ".join(str(d) for d in d[:-1]), d[-1]), t)
