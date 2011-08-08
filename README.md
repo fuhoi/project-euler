@@ -1,13 +1,10 @@
-[Project Euler](http://projecteuler.net/) - My Project Euler Solutions
-=
+# [Project Euler](http://projecteuler.net/) - My Project Euler Solutions
 
-Summary
--
+## Summary
 This repo contains my [Project Euler] [1] solutions
   [1]: http://projecteuler.net/ "Project Euler"
 
-Structure
--
+## Structure
 Each solution is contained within its own folder labelled with the problem id. 
 
 This folder contains the following files:
@@ -19,8 +16,7 @@ This folder contains the following files:
 * `solution.py` - solution to problem
 * `tests.py` - unit tests
 
-References
--
+## References
 * [Project Euler](http://projecteuler.net/)
 * [Dive Into Python](http://diveintopython.org/)
 * [Think Python - How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
