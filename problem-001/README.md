@@ -11,11 +11,11 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 ## Getting Started ##
 ### How to run ###
-`python solution.py -n=1000 -d=3,5`
+    python solution.py -n=1000 -d=3,5
 
 Or:
 
-`python solution.py --limit=1000 --denominators=3,5`
+    python solution.py --limit=1000 --denominators=3,5
 
 ### Supported flags ###
 * `-D, --debug` - verbose output
