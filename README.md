@@ -22,3 +22,4 @@ This folder contains the following files:
 * [Think Python - How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/thinkpython.html)
 * [Python Documentation](http://www.python.org/doc/)
 * [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+* [Understanding Python Decorators](http://stackoverflow.com/questions/739654/understanding-python-decorators)
