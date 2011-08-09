@@ -86,7 +86,7 @@ def multiples(numerators, denominators):
 @counter
 @benchmark
 @log
-def main:
+def main():
     """
     Main method
     """
