@@ -4,6 +4,12 @@
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 
+## Observations
+* Sequence begins at 1
+* Sequence ends 1 number before the limit (with limit of 10, last number in sequence is 9)
+* Sequence contains all numbers between beginning and end that is divisible by the denominators
+* Sequence contains unique list of numbers (no duplicates)
+
 ## Design
 * `remainder(numerator, denominator)` - returns the remainder of the numerator divided by the denominator
 * `isDivisor(numerator, denominator)` - returns true if remainder(numerator, denominator) is zero
