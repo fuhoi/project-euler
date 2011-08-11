@@ -5,10 +5,17 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 
 ## Observations
-* Sequence begins at 1
-* Sequence ends 1 number before the limit (with limit of 10, last number in sequence is 9)
+* Range of candidates begins at 1
+* Range of candidates ends 1 number before the limit (with limit of 10, last number in range is 9)
 * Sequence contains all numbers between beginning and end that is divisible by the denominators
 * Sequence contains unique list of numbers (no duplicates)
+
+## Test cases
+* Sequence with a range beginning at 1 and ending at 10 with a denominator of 1 would contain 1, 2, 3, 4, 5, 6, 7, 8 and 9 with a total of 45
+* Sequence with a range beginning at 1 and ending at 10 with a denominator of 2 would contain 2, 4, 6 and 8 with a total of 20
+* Sequence with a range beginning at 1 and ending at 10 with a denominator of 1 and 2 would contain 1, 2, 3, 4, 5, 6, 7, 8 and 9 with a total of 45
+* Sequence with a range beginning at 1 and ending at 10 with a denominator of 3 would contain 3, 6 and 9 with a total of 18
+* Sequence with a range beginning at 1 and ending at 10 with a denominator of 2 and 3 would contain 2, 3, 4, 6, 8 and 9 with a total of 32
 
 ## Design
 * `remainder(numerator, denominator)` - returns the remainder of the numerator divided by the denominator
