@@ -19,6 +19,7 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 * Sequence with a range beginning at 1 and ending at 10 with a denominator of 2 and 3 would contain 2, 3, 4, 6, 8 and 9 with a total of 32
 
 ## Design
+### Current design
 * `remainder(numerator, denominator)` - returns the remainder of the numerator divided by the denominator
 * `isDivisor(numerator, denominator)` - returns true if remainder(numerator, denominator) is zero
 * `multiples(numerators, denominators)` - returns a list of numerators where isDivisor is true
