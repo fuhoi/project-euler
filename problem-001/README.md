@@ -9,8 +9,8 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 * Multiple - the product of two natural numbers
 
 ## Observations
-* Range of candidates begins at 1
-* Range of candidates ends 1 number before the limit (with limit of 10, last number in range is 9)
+* Range of integers begins at 1
+* Range of integers ends 1 number before the limit (with limit of 10, last number in range is 9) [f^(n-1)]
 * Sequence contains all numbers between beginning and end that is divisible by the denominators
 * Sequence contains unique list of numbers (no duplicates)
 
