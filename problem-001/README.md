@@ -19,11 +19,11 @@ The answer to this problem is 233168
 
 Or:
 
-    python solution.py --limit=1000 --denominators=3,5
+    python solution.py --limit=1000 --denominators=3,5 --verbosity=0
 
 ### Supported flags
 
-* `-D, --debug` - verbose output
+* `-v, --verbose` - verbose output (0=CRITICAL, 1=ERROR, 2=WARN, 3=INFO, 4=DEBUG)
 * `-n, --limit` - upper limit
 * `-d, --denominators` - denominators
 
@@ -64,7 +64,7 @@ Or:
 
 #### Performance
 
-* is_divisor is still called for each denominator
+* `is_divisor` is still called for each denominator
 
 ### Initial design
 
@@ -74,4 +74,4 @@ Or:
 
 #### Performance
 
-* is_divisor is called for each denominator
+* `is_divisor` is called for each denominator
