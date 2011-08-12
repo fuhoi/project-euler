@@ -50,11 +50,9 @@ Or:
 * Sequence with a range beginning at 1 and ending at 10 with a denominator of 3 would contain 3, 6 and 9 with a total of 18
 * Sequence with a range beginning at 1 and ending at 10 with a denominator of 2 and 3 would contain 2, 3, 4, 6, 8 and 9 with a total of 32
 
-## Technical
+## Design
 
-### Design
-
-#### First revision
+### First revision
 
 * `get_numerators(min, max)` - return numbers between min (inclusive) and max (exclusive, or max-1)
 * `get_multiples(numerators, denominators)` - return list of numerators divisible by list of denominators
@@ -64,16 +62,16 @@ Or:
 * `get_answer(min, max, denominators)` - return solution answer
 * `main()` - process script parameters and display answer
 
-##### Performance
+#### Performance
 
 * is_divisor is still called for each denominator
 
-#### Initial design
+### Initial design
 
 * `remainder(numerator, denominator)` - returns the remainder of the numerator divided by the denominator
 * `isDivisor(numerator, denominator)` - returns true if remainder(numerator, denominator) is zero
 * `multiples(numerators, denominators)` - returns a list of numerators where isDivisor is true
 
-##### Performance
+#### Performance
 
-* is_divisor is still called for each denominator
+* is_divisor is called for each denominator
