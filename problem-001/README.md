@@ -28,12 +28,21 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 ## Design
 
+### First revision
+
+* `get_numerators(min, max)` - return numbers between min (inclusive) and max (exclusive, or max-1)
+* `get_multiples(numerators, denominators)` - return list of numerators divisible by list of denominators
+* `is_divisor(numerator, denominator)` - return true is remainder of division is zero
+* `get_remainder(numerator, denominator)` - return remainder of numerator divided by denominator
+* `get_total(multiples)` - return total of multiples
+* `get_answer(min, max, denominators)` - return solution answer
+* `main()` - process script parameters and display answer
+
 ### Initial design
+
 * `remainder(numerator, denominator)` - returns the remainder of the numerator divided by the denominator
 * `isDivisor(numerator, denominator)` - returns true if remainder(numerator, denominator) is zero
 * `multiples(numerators, denominators)` - returns a list of numerators where isDivisor is true
-
-### 
 
 ## Getting Started
 
