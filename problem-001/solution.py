@@ -48,9 +48,9 @@ def counter(func):
 @counter
 @benchmark
 @log   
-def get_numerators(min=1, max=10):
-    """Return list of numbers from min to max-1."""
-    return range(min, max)
+def get_numerators(limit=1000):
+    """Return list of numbers from 1 to limit-1."""
+    return range(1, limit)
 
 @counter
 @benchmark
@@ -67,14 +67,7 @@ def get_multiples(numerators, denominators):
 @log
 def is_divisor(numerator, denominator):
     """Return true if remainder of division is zero."""
-    return get_remainder(numerator, denominator) == 0
-
-@counter
-@benchmark
-@log
-def get_remainder(numerator, denominator):
-    """Return remainder of numerator divided by denominator."""
-    return numerator % denominator
+    return numerator % denominator == 0
 
 @counter
 @benchmark
@@ -86,17 +79,16 @@ def get_total(multiples):
 @counter
 @benchmark
 @log 
-def get_answer(min, max, d):
+def get_answer(limit, denominators):
     """Return solution answer."""
-    n = get_numerators(min, max)
-    m = get_multiples(n, d)
+    n = get_numerators(limit)
+    m = get_multiples(n, denominators)
     t = get_total(m)
     return t
     
 def main():
     # Default values
-    min = 1
-    max = 10
+    n = 1000
     d = [3, 5]
     # Parse parameters
     opts, extraparams = getopt.getopt(sys.argv[1:], "hDn:d:", 
@@ -109,11 +101,11 @@ def main():
         if o in ["-D", "--debug"]:
             pass # setDebug()
         if o in ["-n", "--limit"]:
-            max = int(p.strip("=:"))
+            n = int(p.strip("=:"))
         if o in ["-d", "--denominators"]:
             d = [int(i.strip("=:")) for i in p.split(",")]
     
-    a = get_answer(min, max, d)
+    a = get_answer(n, d)
     print "Answer: %s" % a
 
 if __name__ == "__main__":
