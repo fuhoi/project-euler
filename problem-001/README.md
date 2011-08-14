@@ -57,15 +57,15 @@ Or:
 * `main()` - process script parameters and display answer
 * `get_answer(limit, denominators)` - return solution answer
 * `get_multiples(numerators, denominators)` - return list of numerators divisible by list of denominators
-* `get_numerators(limit)` - return numbers between min (inclusive) and max (exclusive, or max-1)
+* `get_numerators(limit)` - return numbers between 1 and limit (exclusive, or limit-1)
 * `get_total(multiples)` - return total of multiples
-* `is_divisor(numerator, denominator)` - return true is remainder of division is zero
+* `is_divisor(numerator, denominator)` - return true if remainder of division is zero
 
 ### First revision
 
 * `get_numerators(min, max)` - return numbers between min (inclusive) and max (exclusive, or max-1)
 * `get_multiples(numerators, denominators)` - return list of numerators divisible by list of denominators
-* `is_divisor(numerator, denominator)` - return true is remainder of division is zero
+* `is_divisor(numerator, denominator)` - return true if remainder of division is zero
 * `get_remainder(numerator, denominator)` - return remainder of numerator divided by denominator
 * `get_total(multiples)` - return total of multiples
 * `get_answer(min, max, denominators)` - return solution answer
