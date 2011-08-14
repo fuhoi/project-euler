@@ -15,7 +15,7 @@ The answer to this problem is 233168
 
 ### How to run
 
-    python solution.py -n=1000 -d=3,5
+    python solution.py -l=1000 -d=3,5
 
 Or:
 
@@ -24,7 +24,7 @@ Or:
 ### Supported flags
 
 * `-v, --verbose` - verbose output (0=CRITICAL, 1=ERROR, 2=WARN, 3=INFO, 4=DEBUG)
-* `-n, --limit` - upper limit
+* `-l, --limit` - upper limit
 * `-d, --denominators` - denominators
 
 ## Requirements
@@ -51,6 +51,15 @@ Or:
 * Sequence with a range beginning at 1 and ending at 10 with a denominator of 2 and 3 would contain 2, 3, 4, 6, 8 and 9 with a total of 32
 
 ## Design
+
+### Second revision
+
+* `main()` - process script parameters and display answer
+* `get_answer(limit, denominators)` - return solution answer
+* `get_multiples(numerators, denominators)` - return list of numerators divisible by list of denominators
+* `get_numerators(limit)` - return numbers between min (inclusive) and max (exclusive, or max-1)
+* `get_total(multiples)` - return total of multiples
+* `is_divisor(numerator, denominator)` - return true is remainder of division is zero
 
 ### First revision
 
