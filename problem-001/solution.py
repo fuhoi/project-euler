@@ -87,7 +87,7 @@ def is_divisor(numerator, denominator):
 @benchmark
 @log    
 def get_total(multiples):
-    """ Return total of list."""
+    """Return total of list."""
     return sum(multiples)
 
 @counter
@@ -102,24 +102,22 @@ def get_answer(limit, denominators):
     
 def main():
     # Default values
-    n = 1000
+    l = 1000
     d = [3, 5]
     # Parse parameters
-    opts, extraparams = getopt.getopt(sys.argv[1:], "hDn:d:", 
-                                      ["help", "debug", "limit=", "limit:", 
-                                      "denominators=", "denominators:"])
+    opts, extraparams = getopt.getopt(sys.argv[1:],
+                                      "v:l:d:",
+                                      ["verbosity:", "limit=", "denominators="])
     # Process parameters
     for o,p in opts:
-        if o in ["-h", "--help"]:
-            pass # usage()
-        if o in ["-D", "--debug"]:
+        if o in ["-v", "--verbosity"]:
             pass # setDebug()
-        if o in ["-n", "--limit"]:
-            n = int(p.strip("=:"))
+        if o in ["-l", "--limit"]:
+            l = int(p.strip("=:"))
         if o in ["-d", "--denominators"]:
             d = [int(i.strip("=:")) for i in p.split(",")]
-    
-    a = get_answer(n, d)
+    # find answer
+    a = get_answer(l, d)
     print "Answer: %s" % a
 
 if __name__ == "__main__":
