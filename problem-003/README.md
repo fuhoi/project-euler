@@ -48,3 +48,9 @@ Or:
 ### Initial design
 
 * `fib(i, j)` - returns the next number in the Fibonacci sequence
+
+```python
+@logdef is_divisor(numerator, denominator):
+    """Return true if remainder of division is zero."""
+    return numerator % denominator == 0
+```
