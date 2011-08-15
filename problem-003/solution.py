@@ -21,12 +21,30 @@ def log(func):
         return res
     return wrapper
 
+@log
+def is_divisor(numerator, denominator):
+    """Return true if remainder of division is zero."""
+    return numerator % denominator == 0
+    
 @log    
-def fib(f):
-    """Return sum of penultimate and ultimate numbers in list"""
-    s = sum(f[-2:])
-    print "returned %s" % s
-    return s
+def is_prime(n):
+    """Return true if number is prime"""
+    # even is not prime
+    # NOTE: Do not even process even numbers fool
+    if n % 2 == 0:
+        print "%s is not prime" % n
+        return false
+    # everything is divisible by 1 so don't test that
+    # we just tested 2 so start at 3
+    # n is not going to be divisible after floor(n / 2) so end there (don't waste time after that)
+    for d in range(3, math.floor(n / 2)):
+        if is_divisor(n, d):
+            print "%s is not a prime" % n
+            return false # Number is divisible, not prime
+    else: # No divisors
+        print "%s is a prime" % n
+        return true # Prime!
+    return false # Shouldn't get here
 
 @log
 def get_answer(limit):
