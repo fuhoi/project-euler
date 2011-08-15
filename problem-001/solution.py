@@ -65,6 +65,20 @@ def get_multiples(numerators, denominators):
 @counter
 @benchmark
 @log
+def get_multiples_method_two(numerators, denominators):
+    """Return list of numerators divisible by list of denominators."""
+    # Find multiples of denominators
+    m = []
+    for n in numerators:
+        for d in denominators:
+            if is_divisor(n, d):
+                m.append(n)
+                break
+    return m
+
+@counter
+@benchmark
+@log
 def is_divisor(numerator, denominator):
     """Return true if remainder of division is zero."""
     return numerator % denominator == 0
