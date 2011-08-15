@@ -50,7 +50,14 @@ Or:
 * `fib(i, j)` - returns the next number in the Fibonacci sequence
 
 ```python
-@logdef is_divisor(numerator, denominator):
+@log
+def is_divisor(numerator, denominator):
     """Return true if remainder of division is zero."""
     return numerator % denominator == 0
+```
+
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
 ```
