@@ -31,8 +31,8 @@ Or:
 
 ### Definitions
 
-* Prime number
-* Factor
+* Prime number - number divisible by 1 and itself
+* Factor - a number that makes up another number
 
 ### Observations
 
@@ -47,17 +47,4 @@ Or:
 
 ### Initial design
 
-* `fib(i, j)` - returns the next number in the Fibonacci sequence
-
-```python
-@log
-def is_divisor(numerator, denominator):
-    """Return true if remainder of division is zero."""
-    return numerator % denominator == 0
-```
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+* `is_prime(number)` - returns true if number is prime
