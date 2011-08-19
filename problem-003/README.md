@@ -16,11 +16,15 @@ Unanswered
 
 ### How to run
 
-    python solution.py -n=13195
+```shell
+python solution.py -n=13195
+```
 
 Or:
 
-    python solution.py --number=600851475143
+```shell
+python solution.py --number=600851475143
+```
 
 ### Supported flags
 
@@ -48,16 +52,3 @@ Or:
 ### Initial design
 
 * `fib(i, j)` - returns the next number in the Fibonacci sequence
-
-```python
-@log
-def is_divisor(numerator, denominator):
-    """Return true if remainder of division is zero."""
-    return numerator % denominator == 0
-```
-
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
