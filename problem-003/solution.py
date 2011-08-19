@@ -10,15 +10,34 @@ __date__ = "$Date: 2011/08/015 $"
 
 import functools
 import getopt
+import logging
 import math
 import sys
 import time
 
+# create logger with 'solution'
+logger = logging.getLogger('solution')
+logger.setLevel(logging.INFO)
+# create file handler which logs even debug messages
+fh = logging.FileHandler('solution.log')
+fh.setLevel(logging.INFO)
+# create console handler with a higher log level
+ch = logging.StreamHandler()
+ch.setLevel(logging.ERROR)
+# create formatter and add it to the handlers
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+# add the handlers to the logger
+logger.addHandler(fh)
+logger.addHandler(ch)
+    
 def log(func):
     """Print function details."""
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
-        print func.__name__, args, kwargs
+        #logger.info("%s %s", (func.__name__, ", ".join(args)))
+        #print func.__name__, args, kwargs
         res = func(*args, **kwargs)
         return res
     return wrapper
@@ -44,9 +63,6 @@ def counter(func):
         return res
     return wrapper
 
-@counter
-@benchmark
-@log  
 def is_prime(n):
     """Return true if number is prime"""
     # even is not prime
@@ -79,39 +95,52 @@ def get_answer(number):
     max = int(math.floor(number / 2)) # Max divisor
     
     # Parameters
-    print "get_answer - Number: %s" % number
-    print "get_answer - f: %s" % f
-    print "get_answer - i: %s" % i
-    print "get_answer - max: %s" % max
+    logger.info("get_answer - Number: %s" % number)
+    logger.info("get_answer - f: %s" % f)
+    logger.info("get_answer - i: %s" % i)
+    logger.info("get_answer - max: %s" % max)
     
-    
+    # Main loop
     while i < max:
     
-        print "get_answer - Current: %s" % i
+        logger.info("get_answer - Current: %s" % i)
         
         if number % i == 0: # Divisor
         
-            print "get_answer - %s divides %s, is it prime?" % (i, number)
-        
-            if is_prime(i):
+            logger.info("get_answer - %s divides %s, is it prime?" % (i, number))
             
-                print "get_answer - %s is prime" % i
+            j = 3
+            m = int(math.floor(i / 2))
+            
+            while j < m:
+                if i % j == 0:
+                    break
+                j += 2
+                if j % 5 == 0 and j > 5: # Skip numbers ending in 5
+                    j += 2
+            else:
                 f.append(i)
+        
+            #if is_prime(i): # Prime
+                #logger.info("get_answer - %s is prime" % i)
+                #f.append(i)
                 
         i += 2 # Do not include even numbers
         
-    print "List %s" % f
-    print "Largest: %s" % f[-1:]
+        if i % 5 == 0 and i > 5: # Skip numbers ending in 5
+            i += 2
+        
+    logger.info("List %s" % f)
+    logger.info("Largest: %s" % f[-1:])
     
     return sum(f[-1:])
 
-@counter
-@benchmark
-@log  
 def main():
     # Default values
+    logger.info('setting default values')
     n = 13195
     # Parse parameters
+    logger.info('parsing parameters')
     opts, extraparams = getopt.getopt(sys.argv[1:],
                                       "v:n:",
                                       ["verbosity:", "number="])
@@ -122,7 +151,7 @@ def main():
         if o in ["-n", "--number"]:
             n = int(p.strip("=:"))
     # find answer
-    print "main - Number: %s" % n
+    logger.info('calling get answer(' + str(n) + ')')
     a = get_answer(n)
     print "Answer: %s" % a
 
