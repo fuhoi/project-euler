@@ -42,6 +42,7 @@ python solution.py --number=600851475143
 
 * The prime factors of 13195 are 5, 7, 13 and 29. The largest being 29.
 * Must find the largest
+* Start at the floor of half the number and work in descending order to three.
 
 ### Test cases
 
@@ -51,4 +52,6 @@ python solution.py --number=600851475143
 
 ### Initial design
 
-* `fib(i, j)` - returns the next number in the Fibonacci sequence
+* `is_prime(n)` - return true if n is prime
+* `is_factor(n, d)` - return true if d is a factor of n
+* `find_largest_prime_factor(n)` - return largest prime factor
