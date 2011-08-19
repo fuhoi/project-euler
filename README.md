@@ -18,6 +18,11 @@ This folder contains the following files:
 * `solution.py` - solution to problem
 * `tests.py` - unit tests
 
+## Tools
+
+* [Python 2.7](http://www.python.org/)
+* [Notepad++](http://notepad-plus-plus.org/)
+
 ## References
 
 * [Project Euler](http://projecteuler.net/)

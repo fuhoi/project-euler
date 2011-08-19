@@ -16,11 +16,15 @@ Unanswered
 
 ### How to run
 
-    python solution.py -n=13195
+```shell
+python solution.py -n=13195
+```
 
 Or:
 
-    python solution.py --number=600851475143
+```shell
+python solution.py --number=600851475143
+```
 
 ### Supported flags
 
@@ -31,13 +35,14 @@ Or:
 
 ### Definitions
 
-* Prime number - number divisible by 1 and itself
-* Factor - a number that makes up another number
+* Prime number
+* Factor
 
 ### Observations
 
 * The prime factors of 13195 are 5, 7, 13 and 29. The largest being 29.
 * Must find the largest
+* Start at the floor of half the number and work in descending order to three.
 
 ### Test cases
 
@@ -47,4 +52,6 @@ Or:
 
 ### Initial design
 
-* `is_prime(number)` - returns true if number is prime
+* `is_prime(n)` - return true if n is prime
+* `is_factor(n, d)` - return true if d is a factor of n
+* `find_largest_prime_factor(n)` - return largest prime factor
